@@ -1,13 +1,20 @@
+import { getServicesData } from "@/API/services/get";
 import HomeAboutSection from "@/components/home/about";
+import HomeAttorney from "@/components/home/attorneys";
 import HomeHeroSection from "@/components/home/hero";
+import HomePracticeAreas from "@/components/home/practiceAreas";
 import HomeServices from "@/components/home/services";
 
-export default function Home() {
+export default async function Home() {
+  const servicesData = await getServicesData();
+
   return (
     <>
       <HomeHeroSection />
       <HomeAboutSection />
-      <HomeServices />
+      <HomeServices serviceData={servicesData} />
+      <HomePracticeAreas />
+      <HomeAttorney />
     </>
   );
 }

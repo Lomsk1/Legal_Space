@@ -6,6 +6,7 @@ dotenv.config();
 // process.on("uncaughtException", (err) => {
 //   console.log(err.name, err.message);
 //   console.log("UNCAUGHT REJECTION! Shutting down...");
+// pool.end()
 //   process.exit(1);
 // });
 
@@ -18,6 +19,7 @@ const server = app.listen(port, () => {
 // process.on("unhandledRejection", (err: any) => {
 //   console.log(err.name, err.message);
 //   console.log("UNHANDLED REJECTION! Shutting down...");
+// pool.end()
 //   server.close(() => {
 //     process.exit(1);
 //   });
