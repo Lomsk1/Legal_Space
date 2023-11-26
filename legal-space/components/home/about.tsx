@@ -34,7 +34,7 @@ function HomeAboutSection() {
             {lang === "eng" ? "languages" : "ენაზე"}:{" "}
             <span className="not-italic underline">English</span>,{" "}
             <span className="not-italic underline">ქართულ</span>,{" "}
-            <span className="not-italic underline">Armenian</span>,{" "}
+            <span className="not-italic underline">Ruskie</span>,{" "}
             <span className="not-italic underline">Turkish</span>,{" "}
             <span className="not-italic underline">Azerbaijan</span>
           </p>

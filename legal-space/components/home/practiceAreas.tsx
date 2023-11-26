@@ -1,4 +1,4 @@
-import PracticeAreasContainer from "../practiceAreas/container";
+import PracticeAreasContainer from "../practiceAreas/container/container";
 import SectionTitle from "../title";
 import { cookies } from "next/headers";
 import ViewMoreLink from "../viewMore";

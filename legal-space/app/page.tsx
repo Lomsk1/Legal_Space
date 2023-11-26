@@ -1,3 +1,4 @@
+import { getAttorneysData } from "@/API/attorney/get";
 import { getServicesData } from "@/API/services/get";
 import HomeAboutSection from "@/components/home/about";
 import HomeAttorney from "@/components/home/attorneys";
@@ -7,6 +8,7 @@ import HomeServices from "@/components/home/services";
 
 export default async function Home() {
   const servicesData = await getServicesData();
+  const attorneyData = await getAttorneysData();
 
   return (
     <>
@@ -14,7 +16,7 @@ export default async function Home() {
       <HomeAboutSection />
       <HomeServices serviceData={servicesData} />
       <HomePracticeAreas />
-      <HomeAttorney />
+      <HomeAttorney attorneysData={attorneyData} />
     </>
   );
 }

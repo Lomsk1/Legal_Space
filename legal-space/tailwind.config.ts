@@ -13,6 +13,8 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "home-hero": "url('../public/images/bg-1.jpg')",
+        "practice-hero": "url('../public/images/practice.jpg')",
+        "attorney-hero": "url('../public/images/attorney.jpg')",
       },
       colors: {
         "main-green-light": "#DAD7CD",
