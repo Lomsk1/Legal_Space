@@ -7,7 +7,7 @@ import Socials from "@/components/social";
 import ContactClose from "./close";
 import useContactSidebarStore from "@/store/client/layout/contact";
 
-function NavigationContactContainer() {
+function NavigationContactContainer({ lang }: { lang: string }) {
   /* Store */
   const { contactIsOpen } = useContactSidebarStore((state) => state);
   return (
@@ -22,7 +22,7 @@ function NavigationContactContainer() {
 
         {/* Logo */}
         <header className="w-fit h-fit mx-auto mt-8">
-          <Image src={logo} alt="logo" className="w-[150px] h-[100px]"  />
+          <Image src={logo} alt="logo" className="w-[150px] h-[100px]" />
         </header>
 
         {/* Name */}
@@ -34,21 +34,31 @@ function NavigationContactContainer() {
         <ContactBasicInfo
           className="my-10"
           text={[
-            "Tbilisi, Navtlugi street N-10, block N-3, flat N-13",
+            `${
+              lang === "eng"
+                ? "Tbilisi, Navtlugi street N-10, block N-3, flat N-13"
+                : "თბილისი, ნავთლუღის ქ. N-10, კორპუსი N-3, ბინდა N-13"
+            }`,
             "+995 555 393 341",
           ]}
-          title="MAIN OFFICE LOCATION"
+          title={`${
+            lang === "eng" ? "MAIN OFFICE LOCATION" : "ოფისის მისამართი"
+          }`}
         />
 
         {/* Information */}
         <ContactBasicInfo
-          text={["Qeti Beridze", "legalspacelaw@gmail.com", "+995 555 393 341"]}
-          title="LEGAL CONSULTANT"
+          text={[
+            `${lang === "eng" ? "Qeti Beridze" : "ქეთი ბერიძე"}`,
+            "legalspacelaw@gmail.com",
+            "+995 555 393 341",
+          ]}
+          title={`${lang === "eng" ? "LEGAL CONSULTANT" : "საკონტაქტო"}`}
         />
 
         {/* Social */}
         <div className="flex mt-5 gap-5">
-          <p>Social: </p>
+          <p>{lang === "eng" ? "Socials" : "სოც. ქსელი"}: </p>
           <span className="flex gap-3">
             <Socials />
           </span>

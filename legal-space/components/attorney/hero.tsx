@@ -1,5 +1,3 @@
-import Image from "next/image";
-import qetiImg from "@/public/images/qeti.png";
 import { cookies } from "next/headers";
 
 function AttorneyHeroSection() {
@@ -7,7 +5,7 @@ function AttorneyHeroSection() {
   const lang = cookieStore.get("lang")?.value || "geo";
 
   return (
-    <main className="w-full min-h-screen bg-attorney-hero bg-cover bg-fixed bg-center relative flex justify-center items-center md:items-end">
+    <main className="w-full min-h-screen bg-attorney-hero bg-cover bg-fixed bg-center relative flex justify-center items-center">
       {/* Filter */}
       <div className="absolute w-full h-full top-0 bg-black opacity-80"></div>
 
@@ -16,14 +14,8 @@ function AttorneyHeroSection() {
         {/* Text */}
         <aside className="w-full md:flex md:justify-center md:items-center ">
           <h1 className="text-center text-3xl md:text-5xl tracking-widest font-semibold ">
-            {lang === "eng"
-              ? " We Fight for Your Rights"
-              : "ჩვენ ვიბრძვით თქვენი უფლებებისთვის"}
+            {lang === "eng" ? "Our Attorneys" : "ჩვენი ადვოკატები"}
           </h1>
-        </aside>
-        {/* Image */}
-        <aside className="w-full aspect-[2/3] max-w-[310px]  lg:max-w-[500px]">
-          <Image src={qetiImg} alt="qeti" priority />
         </aside>
       </div>
     </main>

@@ -13,7 +13,7 @@ function HomeServices({ serviceData }: { serviceData: ServicesType }) {
       />
 
       {/* Services Containers */}
-      <div className="flex gap-2 bg-main-green-medium rounded-md w-[80%] mx-auto flex-col justify-center items-center md:flex-row">
+      <div className="flex gap-2 bg-main-green-medium rounded-md w-[80%] mx-auto flex-col justify-center items-center md:flex-row py-10">
         {serviceData.status === "success" && serviceData.result > 0 ? (
           serviceData.data.map((serv) => (
             <ServiceContainer

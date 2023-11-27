@@ -3,31 +3,6 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const linkData1 = [
-  {
-    title: "Home",
-    path: "/",
-  },
-  {
-    title: "Practice Areas",
-    path: "/practice-areas",
-  },
-  {
-    title: "Attorney",
-    path: "#",
-  },
-];
-const linkData2 = [
-  {
-    title: "About",
-    path: "#",
-  },
-  {
-    title: "Blog",
-    path: "#",
-  },
-];
-
 const linkClasses = {
   general:
     "md:after:absolute md:after:contents[''] md:after:w-6 md:after:h-[2px] md:after:opacity-0 md:after:-bottom-2 md:after:left-1/2 md:after:-translate-x-1/2 md:after:duration-300 md:after:bg-gray-600",
@@ -36,9 +11,32 @@ const linkClasses = {
   active: "md:after:bg-white md:after:opacity-100",
 };
 
-export function ActiveNavigation() {
+export function ActiveNavigation({ lang }: { lang: string }) {
   const pathname = usePathname();
-
+  const linkData1 = [
+    {
+      title: lang === "eng" ? "Home" : "მთავარი",
+      path: "/",
+    },
+    {
+      title: lang === "eng" ? "Practice Areas" : "სამოქმედო სფერო",
+      path: "/practice-areas",
+    },
+    {
+      title: lang === "eng" ? "Attorney" : "ადვოკატები",
+      path: "/attorney",
+    },
+  ];
+  const linkData2 = [
+    {
+      title: lang === "eng" ? "About Us" : "ჩვენს შესახებ",
+      path: "#",
+    },
+    {
+      title: lang === "eng" ? "Blog" : "ბლოგი",
+      path: "/blog",
+    },
+  ];
   return (
     <ul className="flex md:flex-row flex-col justify-evenly w-full items-center lg:px-5 md:px-3 gap-5 md:gap-0">
       {linkData1 &&
@@ -93,9 +91,12 @@ export function ActiveNavigation() {
       <li className="relative">
         <Link
           className={`${linkClasses.hover} ${linkClasses.general}tracking-wider font-semibold duration-300 text-white`}
-          href={"#"}
+          href={
+            "https://www.facebook.com/profile.php?id=100085587826241&mibextid=LQQJ4d"
+          }
+          target="_blank"
         >
-          Trainings
+          {lang === "eng" ? "Trainings" : "ტრენინგები"}
         </Link>
       </li>
     </ul>

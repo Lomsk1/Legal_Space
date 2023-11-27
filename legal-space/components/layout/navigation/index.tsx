@@ -4,17 +4,21 @@ import NavigationForMobile from "./mobile";
 import NavigationContactButton from "./contact/contactButton";
 import NavigationContactContainer from "./contact/container";
 import Link from "next/link";
+import { cookies } from "next/headers";
 
 function LayoutNavigation() {
+  /* Language */
+  const cookieStore = cookies();
+  const lang = cookieStore.get("lang")?.value || "geo";
   return (
     <>
       {/* Tablet, Laptop, PC */}
       <nav className="hidden md:flex justify-end items-end lg:gap-10 md:gap-5 md:px-6 bg-main-green-medium py-2 sticky top-0 z-[60]">
-        <ActiveNavigation />
+        <ActiveNavigation lang={lang} />
 
         {/* Contact */}
         <NavigationContactButton />
-        <NavigationContactContainer />
+        <NavigationContactContainer lang={lang} />
       </nav>
 
       {/* Mobile */}
