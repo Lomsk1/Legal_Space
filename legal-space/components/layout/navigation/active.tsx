@@ -20,7 +20,7 @@ const linkData1 = [
 const linkData2 = [
   {
     title: "About",
-    path: "#",
+    path: "/about",
   },
   {
     title: "Blog",
