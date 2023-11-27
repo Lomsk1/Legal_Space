@@ -29,8 +29,8 @@ export function ActiveNavigation({ lang }: { lang: string }) {
   ];
   const linkData2 = [
     {
-      title: lang === "eng" ? "About Us" : "ჩვენს შესახებ",
-      path: "#",
+      title: lang === "eng" ? "About" : "ჩვენს შესახებ",
+      path: "/about",
     },
     {
       title: lang === "eng" ? "Blog" : "ბლოგი",
