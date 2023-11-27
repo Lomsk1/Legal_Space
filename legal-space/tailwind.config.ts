@@ -15,6 +15,7 @@ const config: Config = {
         "home-hero": "url('../public/images/bg-1.jpg')",
         "practice-hero": "url('../public/images/practice.jpg')",
         "attorney-hero": "url('../public/images/attorney.jpg')",
+        "blog-hero": "url('../public/images/blog1.jpg')",
       },
       colors: {
         "main-green-light": "#DAD7CD",
