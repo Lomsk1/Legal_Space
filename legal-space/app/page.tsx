@@ -7,16 +7,16 @@ import HomePracticeAreas from "@/components/home/practiceAreas";
 import HomeServices from "@/components/home/services";
 
 export default async function Home() {
-  const servicesData = await getServicesData();
-  const attorneyData = await getAttorneysData();
+  // const servicesData = await getServicesData();
+  // const attorneyData = await getAttorneysData();
 
   return (
     <>
       <HomeHeroSection />
       <HomeAboutSection />
-      <HomeServices serviceData={servicesData} />
+      {/* <HomeServices serviceData={servicesData} /> */}
       <HomePracticeAreas />
-      <HomeAttorney attorneysData={attorneyData} />
+      {/* <HomeAttorney attorneysData={attorneyData} /> */}
     </>
   );
 }
