@@ -10,20 +10,20 @@ import {
   getOne,
   updateOne,
 } from "./common/factory.controller";
-import Attorney from "../models/attorney/attorney.model";
-import AttorneyContent from "../models/attorney/attorneyContent.model";
 import AppError from "../utils/appErrors";
+import BlogContent from "../models/blog/blogContent.model";
+import Blog from "../models/blog/blog.model";
 import mongoose from "mongoose";
 
 /* Main */
-export const getAllAttorneys = getAll(Attorney);
-export const getAttorneyById = getOne(Attorney);
+export const getAllBlogs = getAll(Blog);
+export const getBlogById = getOne(Blog);
 
-export const createAttorney = catchAsync(
+export const createBlog = catchAsync(
   async (req: Request, res: Response, _next: NextFunction) => {
     let createdData = req.body;
 
-    const data = await Attorney.create(createdData);
+    const data = await Blog.create(createdData);
 
     if (req.file) {
       const tempDirPath = path.join(__dirname, "../images/product");
@@ -37,7 +37,7 @@ export const createAttorney = catchAsync(
       fs.writeFileSync(tempFilePath, req.file.buffer);
 
       const cloudUpload = await cloudinary.uploader.upload(tempFilePath, {
-        folder: "Legal_Space/Attorneys",
+        folder: "Legal_Space/Blog",
       });
 
       if (createdData.image?.public_id) {
@@ -63,12 +63,12 @@ export const createAttorney = catchAsync(
   }
 );
 
-export const updateAttorney = catchAsync(
+export const updateBlog = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const { body } = req;
     let updatedData = { ...body };
 
-    const data = await Attorney.findByIdAndUpdate(req.params.id, updatedData, {
+    const data = await Blog.findByIdAndUpdate(req.params.id, updatedData, {
       new: true,
       runValidators: true,
     });
@@ -89,7 +89,7 @@ export const updateAttorney = catchAsync(
       fs.writeFileSync(tempFilePath, req.file.buffer);
 
       const cloudUpload = await cloudinary.uploader.upload(tempFilePath, {
-        folder: "Legal_Space/Attorneys",
+        folder: "Legal_Space/Blog",
       });
 
       if (data.image?.public_id) {
@@ -114,12 +114,12 @@ export const updateAttorney = catchAsync(
     });
   }
 );
-export const deleteAttorney = catchAsync(
+export const deleteBlog = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     const session = await mongoose.startSession();
     session.startTransaction();
     try {
-      const data = await Attorney.findByIdAndDelete(req.params.id).session(session);
+      const data = await Blog.findByIdAndDelete(req.params.id).session(session);
 
       if (!data) {
         return next(new AppError("No Document found with that ID", 404));
@@ -128,12 +128,12 @@ export const deleteAttorney = catchAsync(
         await cloudinary.uploader.destroy(data.image.public_id);
       }
 
-      await AttorneyContent.find({ blog_id: data.id })
+      await BlogContent.find({ blog_id: data.id })
         .deleteMany()
         .session(session);
       await session.commitTransaction();
 
-      res.status(204).json({
+      res.status(200).json({
         status: "success",
       });
     } catch (error) {
@@ -146,8 +146,8 @@ export const deleteAttorney = catchAsync(
 );
 
 /* Content */
-export const getAllAttorneyContent = getAll(AttorneyContent);
-export const getOneAttorneyContent = getOne(AttorneyContent);
-export const createAttorneyContent = createOne(AttorneyContent);
-export const updateAttorneyContent = updateOne(AttorneyContent);
-export const deleteAttorneyContent = deleteOne(AttorneyContent);
+export const getAllBlogContent = getAll(BlogContent);
+export const getOneBlogContent = getOne(BlogContent);
+export const createBlogContent = createOne(BlogContent);
+export const updateBlogContent = updateOne(BlogContent);
+export const deleteBlogContent = deleteOne(BlogContent);

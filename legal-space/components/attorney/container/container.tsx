@@ -13,9 +13,9 @@ interface PropTypes {
   };
   defaultAvatar: string;
   description: string;
-  instagram: string | null;
-  facebook: string | null;
-  linkedin: string | null;
+  instagram?: string;
+  facebook?: string;
+  linkedin?: string;
 }
 
 function AttorneyContainer({

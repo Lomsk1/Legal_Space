@@ -2,8 +2,8 @@ export interface ServicesType {
   status: "success" | "fail" | "error";
   result: number;
   data: {
-    id: number;
-    service_id: number;
+    _id: string;
+    service_id: string;
     title: string;
     description: string;
     lang: "geo" | "eng";

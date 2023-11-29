@@ -6,7 +6,7 @@ export async function getServicesData(): Promise<ServicesType> {
   const cookieStore = cookies();
   const lang = cookieStore.get("lang")?.value || "geo";
 
-  const res = await fetch(`${serverURL}api/v1/services?lang=${lang}`, {
+  const res = await fetch(`${serverURL}api/v1/services/content?lang=${lang}`, {
     next: { revalidate: 3600 },
   });
 

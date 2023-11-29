@@ -18,21 +18,19 @@ function HomeAttorney({ attorneysData }: { attorneysData: AttorneysTypes }) {
 
       <aside className="grid grid-cols-1 gap-4 bg-main-green-medium p-5 rounded-md w-[90%] mx-auto max-w-[500px] md:grid-cols-2 md:max-w-[1320px] lg:grid-cols-3 gap-y-14">
         {attorneysData?.status === "success" &&
-          attorneysData.data
-            .sort((a, b) => a.id - b.id)
-            .map((att) => (
-              <AttorneyContainer
-                key={att.id}
-                name={att.name}
-                image={att.image}
-                defaultAvatar={defaultAvatar.src}
-                title={att.title}
-                description={att.description}
-                linkedin={att.linkedin}
-                facebook={att.facebook}
-                instagram={att.instagram}
-              />
-            ))}
+          attorneysData.data.map((att) => (
+            <AttorneyContainer
+              key={att._id}
+              name={att.name}
+              image={att.attorney_id.image}
+              defaultAvatar={defaultAvatar.src}
+              title={att.title}
+              description={att.description}
+              linkedin={att.attorney_id.linkedin}
+              facebook={att.attorney_id.facebook}
+              instagram={att.attorney_id.instagram}
+            />
+          ))}
       </aside>
 
       <ViewMoreLink href="/attorney" />

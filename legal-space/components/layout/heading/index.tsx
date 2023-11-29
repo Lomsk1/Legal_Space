@@ -1,7 +1,10 @@
 import LangButton from "@/components/lang/button";
 import Socials from "@/components/social";
+import { cookies } from "next/headers";
 
 function HeadingComponent() {
+  const cookieStore = cookies();
+  const lang = cookieStore.get("lang")?.value || "geo";
   return (
     <section className="flex w-full justify-between items-center px-6 bg-main-green-medium py-1 border-b border-white">
       {/* Social */}
@@ -11,7 +14,7 @@ function HeadingComponent() {
 
       {/* Language */}
       <aside className="w-28 flex justify-center">
-        <LangButton />
+        <LangButton lang={lang} />
       </aside>
     </section>
   );

@@ -1,4 +1,5 @@
-import mongoose, { Document, Model } from "mongoose";
+import { NextFunction } from "express";
+import mongoose, { Document, Model, Query } from "mongoose";
 
 // An interface that describes the properties
 // that are required to create a new Brand
@@ -8,6 +9,7 @@ interface blogContentAttr {
   created_at: Date;
   lang: string;
   blogText: string;
+  blog_id: mongoose.Types.ObjectId;
 }
 
 // An interface that describes the properties
@@ -24,9 +26,10 @@ export interface BlogContentDoc extends Document {
   created_at: Date;
   lang: string;
   blogText: string;
+  blog_id: mongoose.Types.ObjectId;
 }
 
-const BlogSchema = new mongoose.Schema<blogContentAttr>({
+const BlogContentSchema = new mongoose.Schema<blogContentAttr>({
   title: {
     type: String,
     required: [true, "An Blog must have a title"],
@@ -46,12 +49,29 @@ const BlogSchema = new mongoose.Schema<blogContentAttr>({
   created_at: {
     type: Date,
     default: Date.now(),
-  }
+  },
+  blogText: String,
+  blog_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Blog",
+    required: [true, "Please, add a Blog id"],
+  },
+});
+
+BlogContentSchema.pre(/^find/, function (next: NextFunction) {
+  const query = this as Query<BlogContentDoc[], BlogContentDoc>;
+
+  query.populate({
+    path: "blog_id",
+    select: "image",
+  });
+
+  next();
 });
 
 const BlogContent = mongoose.model<BlogContentDoc, BlogContentModel>(
   "BlogContent",
-  BlogSchema
+  BlogContentSchema
 );
 
 export default BlogContent;

@@ -6,8 +6,8 @@ export async function getAttorneysData(): Promise<AttorneysTypes> {
   const cookieStore = cookies();
   const lang = cookieStore.get("lang")?.value || "geo";
 
-  const res = await fetch(`${serverURL}api/v1/attorney?lang=${lang}`, {
-    next: { revalidate: 3600 },
+  const res = await fetch(`${serverURL}api/v1/attorney/content?lang=${lang}`, {
+    next: { revalidate: 1 },
   });
 
   if (!res.ok) {

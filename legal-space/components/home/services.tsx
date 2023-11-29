@@ -17,7 +17,7 @@ function HomeServices({ serviceData }: { serviceData: ServicesType }) {
         {serviceData.status === "success" && serviceData.result > 0 ? (
           serviceData.data.map((serv) => (
             <ServiceContainer
-              key={serv.id}
+              key={serv._id}
               title={serv.title}
               description={serv.description}
             />

@@ -1,13 +1,13 @@
 import { cookies } from "next/headers";
 import Image from "next/image";
 
-function EachBlogHeroSection() {
+function EachBlogHeroSection({title}:{title: string}) {
   const cookieStore = cookies();
   const lang = cookieStore.get("lang")?.value || "geo";
   return (
     <main className="w-full flex flex-col py-10">
       <h1 className="max-w-[1000px] my-20 text-center font-semibold text-3xl mx-auto">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. A, molestias?
+        {title}
       </h1>
 
       {/* Image Container */}
