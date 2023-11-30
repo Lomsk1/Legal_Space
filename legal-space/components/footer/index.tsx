@@ -1,13 +1,17 @@
 import Link from "next/link";
 import FooterInfoContainer from "./container";
 import { cookies } from "next/headers";
+import Form from "./components/Form";
 
 function Footer() {
   const cookieStore = cookies();
   const lang = cookieStore.get("lang")?.value || "geo";
   return (
-    <footer className="bg-main-green-dark flex flex-col pt-10 pb-5">
+    <footer className="bg-main-green-dark items-center flex flex-col pt-10 pb-5">
       {/* Info */}
+      <div>
+        <Form lang={lang} />
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-2 gap-6 2xl:max-w-[1300px] 2xl:mx-auto">
         {/* About */}
         <FooterInfoContainer
