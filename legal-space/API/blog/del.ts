@@ -1,5 +1,7 @@
+import { serverURLClient } from "@/config/env.config";
+
 export async function deleteBlog({ id }: { id: string }): Promise<void> {
-  const res = await fetch(`/api/blog`, {
+  const res = await fetch(`${serverURLClient}api/v1/blog/${id}`, {
     method: "DELETE",
     body: JSON.stringify({ id: id }),
   });

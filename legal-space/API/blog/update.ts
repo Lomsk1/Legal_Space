@@ -1,4 +1,5 @@
 import { BlogType } from "@/@types/blog/blog";
+import { serverURLClient } from "@/config/env.config";
 
 export async function updateBlog({
   formData,
@@ -7,7 +8,7 @@ export async function updateBlog({
   formData: FormData;
   id: string;
 }): Promise<BlogType> {
-  const res = await fetch(`/api/blog?id=${id}`, {
+  const res = await fetch(`${serverURLClient}api/v1/blog/${id}`, {
     method: "PATCH",
     body: formData,
   });

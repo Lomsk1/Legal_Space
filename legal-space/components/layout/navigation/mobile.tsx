@@ -6,7 +6,7 @@ import Image from "next/image";
 import logo from "@/public/images/logo-removebg.png";
 import { RemoveScroll } from "react-remove-scroll";
 
-function NavigationForMobile() {
+function NavigationForMobile({ lang }: { lang: string }) {
   const { navIsOpen, setNavIsOpen } = useBurgerStore((state) => state);
   return (
     <nav
@@ -46,7 +46,7 @@ function NavigationForMobile() {
         Legal Space
       </h2>
 
-      <ActiveNavigation />
+      <ActiveNavigation lang={lang} />
     </nav>
   );
 }

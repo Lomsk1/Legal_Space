@@ -21,17 +21,17 @@ function LayoutNavigation() {
         <NavigationContactContainer lang={lang} />
       </nav>
 
-			{/* Mobile */}
-			<section className="md:hidden flex justify-between items-center px-6 bg-main-green-medium z-40 py-2">
-				<aside className="w-40 h-10 flex items-center text-2xl">
-					<Link href={"/"}>Legal Space</Link>
-				</aside>
-				<BurgerButton />
-			</section>
+      {/* Mobile */}
+      <section className="md:hidden flex justify-between items-center px-6 bg-main-green-medium z-40 py-2">
+        <aside className="w-40 h-10 flex items-center text-2xl">
+          <Link href={"/"}>Legal Space</Link>
+        </aside>
+        <BurgerButton />
+      </section>
 
-			<NavigationForMobile />
-		</>
-	);
+      <NavigationForMobile lang={lang} />
+    </>
+  );
 }
 
 export default LayoutNavigation;
