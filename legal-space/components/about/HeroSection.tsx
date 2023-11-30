@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import aboutImage from "../../public/images/about/team.jpg";
 
