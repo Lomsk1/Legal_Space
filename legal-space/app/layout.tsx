@@ -4,6 +4,7 @@ import "./globals.css";
 import LayoutNavigation from "@/components/layout/navigation";
 import HeadingComponent from "@/components/layout/heading";
 import Footer from "@/components/footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <HeadingComponent />
         <LayoutNavigation />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
