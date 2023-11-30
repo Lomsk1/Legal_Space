@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
-import aboutImage from "@/public/images/about/team.jpg";
+import aboutImage from "@/public/images/team.jpg";
 import { cookies } from "next/headers";
 
 const HeroSection: React.FC = () => {
