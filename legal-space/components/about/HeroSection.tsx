@@ -20,7 +20,6 @@ const HeroSection: React.FC = () => {
           src={aboutImage}
           alt="image"
           className="h-[60dvh] md:h-[80dvh] object-cover object-top"
-          objectFit="cover"
         />
       </div>
       <article className="flex sm:flex-row flex-col gap-y-5 text-center sm:text-left gap-x-10">
