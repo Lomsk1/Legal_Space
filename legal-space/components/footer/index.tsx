@@ -57,7 +57,11 @@ function Footer() {
         {/* Contact */}
         <FooterInfoContainer
           title={`${lang === "eng" ? "Contact" : "საკონტაქტო"}`}
-          description={["legalspacelaw@gmail.com", "+995 555 393 341"]}
+          description={[
+            "legalspacelaw@gmail.com",
+            "+995 555 393 341",
+            "+995 558 616 168",
+          ]}
         />
       </div>
 

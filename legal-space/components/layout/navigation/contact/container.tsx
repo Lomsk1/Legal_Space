@@ -40,6 +40,7 @@ function NavigationContactContainer({ lang }: { lang: string }) {
                 : "თბილისი, ნავთლუღის ქ. N-10, კორპუსი N-3, ბინდა N-13"
             }`,
             "+995 555 393 341",
+            "+995 558 616 168",
           ]}
           title={`${
             lang === "eng" ? "MAIN OFFICE LOCATION" : "ოფისის მისამართი"
@@ -52,6 +53,7 @@ function NavigationContactContainer({ lang }: { lang: string }) {
             `${lang === "eng" ? "Qeti Beridze" : "ქეთი ბერიძე"}`,
             "legalspacelaw@gmail.com",
             "+995 555 393 341",
+            "+995 558 616 168"
           ]}
           title={`${lang === "eng" ? "LEGAL CONSULTANT" : "საკონტაქტო"}`}
         />
