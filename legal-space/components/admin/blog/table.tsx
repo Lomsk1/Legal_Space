@@ -67,7 +67,7 @@ function BlogTable({ blogData }: { blogData: BlogsType }) {
         </tbody>
       </table>
       {updateBlog && <AdminBlogUpdateForm id={updateBlog} />}
-      {addContent && <AdminBlogContentForm />}
+      {addContent && <AdminBlogContentForm blogId={addContent} />}
     </>
   );
 }

@@ -6,7 +6,7 @@ export default async function Page() {
   const blogsData = await getBlogsContentData();
   return (
     <>
-      {/* <BlogHeroSection />
+      <BlogHeroSection />
       {blogsData.status === "success" ? (
         <BlogContentSection
           status={blogsData.status}
@@ -15,8 +15,7 @@ export default async function Page() {
         />
       ) : (
         <div>No Data Found</div>
-      )} */}
-      <h1>This Page is Under the Construction</h1>
+      )}
     </>
   );
 }

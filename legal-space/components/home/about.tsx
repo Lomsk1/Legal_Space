@@ -28,15 +28,15 @@ function HomeAboutSection() {
               : ",,Legal Space “- ესაა სამართლებრივი სივრცე, რომელიც იცავს თქვენს დარღვეულ უფლებებს. ჩვენთან სამართლებრივი კონსულტაცია და იურიდიული მომსახურება შეგიძლიათ მიიღოთ როგორც ქართულ, ასევე ინგლისურ, თურქულ და აზერბაიჯანულ ენებზე. ჩვენი გუნდი გთავაზობთ როგორც იურდიული დოკუმენტაციის მომზადებას, ასევე წარმომადგენლობას საჯარო დაწესებულებებსა და სასამართლოს სამივე ინსტანციაში."}
           </p>
 
-          <p className="mt-16 text-xl italic">
+          <p className="mt-16 text-xl">
             {lang === "eng" ? "We are speaking on" : "ჩვენ ვსაუბრობთ"}{" "}
             <span className="font-bold">5</span>{" "}
             {lang === "eng" ? "languages" : "ენაზე"}:{" "}
-            <span className="not-italic underline">English</span>,{" "}
-            <span className="not-italic underline">ქართულ</span>,{" "}
-            <span className="not-italic underline">Ruskie</span>,{" "}
-            <span className="not-italic underline">Turkish</span>,{" "}
-            <span className="not-italic underline">Azerbaijan</span>
+            <span className=" font-bold">English</span>,{" "}
+            <span className=" font-bold">ქართულ</span>,{" "}
+            <span className=" font-bold">русский</span>,{" "}
+            <span className=" font-bold">Turkish</span>,{" "}
+            <span className=" font-bold">Azerbaijan</span>
           </p>
         </aside>
 

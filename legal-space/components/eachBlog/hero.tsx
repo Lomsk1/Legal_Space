@@ -1,7 +1,17 @@
+import { BlogContentType } from "@/@types/blog/content";
 import { cookies } from "next/headers";
 import Image from "next/image";
+import defaultImage from "@/public/images/avatar_default.jpg";
 
-function EachBlogHeroSection({title}:{title: string}) {
+function EachBlogHeroSection({
+  title,
+  image,
+  description,
+}: {
+  title: string;
+  image?: { url: string; public_id: string };
+  description: string;
+}) {
   const cookieStore = cookies();
   const lang = cookieStore.get("lang")?.value || "geo";
   return (
@@ -12,14 +22,18 @@ function EachBlogHeroSection({title}:{title: string}) {
 
       {/* Image Container */}
       <div className="w-[90%] h-screen mx-auto">
-        {/* <Image
-          src={
-            "https://images.pexels.com/photos/2894944/pexels-photo-2894944.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          }
+        <Image
+          src={image ? image.url : defaultImage}
           alt="bg"
-
           className="rounded-md object-cover object-center w-full h-full"
-        /> */}
+          width={1500}
+          height={1500}
+        />
+      </div>
+
+      {/* Description */}
+      <div className="w-[90%] mx-auto my-14">
+        <p>{description}</p>
       </div>
     </main>
   );

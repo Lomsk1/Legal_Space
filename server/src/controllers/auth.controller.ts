@@ -5,6 +5,7 @@ import { catchAsync } from "../utils/catchAsync";
 // import Email from "../utils/email";
 import AppError from "../utils/appErrors";
 import User, { UserDoc } from "../models/auth/auth.model";
+import { getOne } from "./common/factory.controller";
 
 dotenv.config();
 
@@ -79,3 +80,10 @@ export const login = catchAsync(
     createSendToken(user, 200, res, req);
   }
 );
+
+export const getMe = (req: Request, _res: Response, next: NextFunction) => {
+  req.params.id = req.user.id;
+  next();
+};
+
+export const getUser = getOne(User);

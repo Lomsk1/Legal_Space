@@ -47,7 +47,7 @@ export function ActiveNavigation({ lang }: { lang: string }) {
                 pathname === links.path ? linkClasses.active : "text-white"
               } ${linkClasses.hover} ${
                 linkClasses.general
-              } tracking-wider font-semibold duration-300`}
+              } tracking-wider  duration-300`}
               href={links.path}
             >
               {links.title}
@@ -57,7 +57,7 @@ export function ActiveNavigation({ lang }: { lang: string }) {
 
       <Link
         href={"/"}
-        className="cursor-default text-3xl font-light lg:block hidden"
+        className="cursor-default text-3xl font-semibold lg:block hidden "
       >
         Legal Space
       </Link>
@@ -68,7 +68,7 @@ export function ActiveNavigation({ lang }: { lang: string }) {
           pathname === "/contact" ? linkClasses.active : "text-white"
         } ${linkClasses.hover} ${
           linkClasses.general
-        } tracking-wider font-semibold duration-300 md:hidden`}
+        } tracking-wider  duration-300 md:hidden`}
       >
         Contact
       </Link>
@@ -81,7 +81,7 @@ export function ActiveNavigation({ lang }: { lang: string }) {
                 pathname === links.path ? linkClasses.active : "text-white"
               } ${linkClasses.hover} ${
                 linkClasses.general
-              } tracking-wider font-semibold duration-300`}
+              } tracking-wider  duration-300`}
               href={links.path}
             >
               {links.title}
@@ -90,7 +90,7 @@ export function ActiveNavigation({ lang }: { lang: string }) {
         ))}
       <li className="relative">
         <Link
-          className={`${linkClasses.hover} ${linkClasses.general}tracking-wider font-semibold duration-300 text-white`}
+          className={`${linkClasses.hover} ${linkClasses.general}tracking-wider  duration-300 text-white`}
           href={
             "https://www.facebook.com/profile.php?id=100085587826241&mibextid=LQQJ4d"
           }

@@ -15,7 +15,7 @@ function PracticeAreaHeroSection() {
           <h1 className="text-center text-3xl md:text-5xl tracking-widest font-semibold text-main-green-light">
             {lang === "eng"
               ? "Practice Areas and Services"
-              : "ჩვენი სამუშაო სფერო დასერვისები"}
+              : "ჩვენი სამუშაო სფერო და სერვისები"}
           </h1>
         </aside>
       </div>

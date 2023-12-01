@@ -16,6 +16,9 @@ export async function createBlogContent({
 }): Promise<BlogContentType> {
   const res = await fetch(`${serverURLClient}api/v1/blog/content`, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       blog_id: blog_id,
       blogText: blogText,
@@ -24,10 +27,6 @@ export async function createBlogContent({
       description: description,
     }),
   });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
 
   return res.json();
 }

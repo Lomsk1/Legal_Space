@@ -17,7 +17,12 @@ interface PropTypes {
 const Form: React.FC<PropTypes> = ({ lang }) => {
   const [statusOk, setStatusOk] = useState<string | null>(null);
 
-  const { handleSubmit, register, reset } = useForm<FormData>();
+  const {
+    handleSubmit,
+    register,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>();
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     emailjs
@@ -52,13 +57,20 @@ const Form: React.FC<PropTypes> = ({ lang }) => {
       >
         <Input
           register={register("name", {
-            required: true,
+            required: {
+              value: true,
+              message: lang === "eng" ? "Enter a Name" : "მიუთითეთ სახელი",
+            },
           })}
           placeholder={`${lang === "eng" ? "Name" : "სახელი"}`}
+          error={errors.name ? errors.name.message : undefined}
         />
         <Input
           register={register("phone", {
-            required: true,
+            required: {
+              value: true,
+              message: lang === "eng" ? "Enter a Name" : "მიუთითეთ სახელი",
+            },
             // pattern: {
             //   value:
             //     /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
@@ -68,20 +80,30 @@ const Form: React.FC<PropTypes> = ({ lang }) => {
           placeholder={`${
             lang === "eng" ? "Phone Number" : "ტელეფონის ნომერი"
           }`}
+          error={errors.phone ? errors.phone.message : undefined}
         />
-        <div className="relative w-[250px] box-border">
+        <div className="relative w-[250px] md:w-[500px] box-border">
           <textarea
-            {...register("text")}
+            {...register("text", {
+              required: {
+                value: true,
+                message: lang === "eng" ? "Enter a text" : "შეიყვანეთ ტექსტი",
+              },
+            })}
             placeholder={`${
               lang === "eng" ? "Enter a Text" : "შეიყვანეთ ტექსტი"
             }`}
-            className="p-[10px] box-border h-[200px] w-full focus:outline-none pl-5 resize-none bg-transparent peer border-b  border-b-main-green-light"
+            className="p-[10px] box-border h-[100px] w-full focus:outline-none pl-5 resize-none bg-transparent peer border-b  border-b-main-green-light"
             cols={3}
-          ></textarea>
+          />
+
           <div className="w-0 absolute bottom-0 h-[3px] bg-main-green-medium transition-all duration-500 peer-focus:w-full z-10"></div>
         </div>
+        <p className="text-red-500 font-semibold text-sm self-start">
+          {errors?.text?.message}
+        </p>
         <button
-          className="py-5 px-16 border-none bg-main-green-medium w-full"
+          className="py-3 px-12 border-none bg-main-green-medium w-full"
           type="submit"
         >
           {lang === "eng" ? "Send" : "გაგზავნა"}

@@ -1,4 +1,5 @@
 export interface BlogContentType {
+  message: string | undefined;
   status: "success" | "fail" | "error";
   data: {
     title: string;

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
-import aboutImage from "@/public/images/team.jpg";
+import aboutImage from "@/public/images/books.jpg";
 import { cookies } from "next/headers";
 
 const HeroSection: React.FC = () => {
@@ -19,7 +19,7 @@ const HeroSection: React.FC = () => {
         <Image
           src={aboutImage}
           alt="image"
-          className="h-[60dvh] md:h-[80dvh] object-cover object-top"
+          className="h-[60dvh] md:h-[100dvh] object-cover object-center"
         />
       </div>
       <article className="flex sm:flex-row flex-col gap-y-5 text-center sm:text-left gap-x-10">
