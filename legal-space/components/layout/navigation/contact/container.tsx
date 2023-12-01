@@ -36,7 +36,7 @@ function NavigationContactContainer({ lang }: { lang: string }) {
           text={[
             `${
               lang === "eng"
-                ? "Tbilisi, Navtlugi street N-10, block N-3, flat N-13"
+                ? "Tbilisi, Navtlughi street N-10, block N-3, flat N-13"
                 : "თბილისი, ნავთლუღის ქ. N-10, კორპუსი N-3, ბინდა N-13"
             }`,
             "+995 555 393 341",

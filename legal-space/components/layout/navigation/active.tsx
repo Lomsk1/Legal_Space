@@ -19,7 +19,7 @@ export function ActiveNavigation({ lang }: { lang: string }) {
       path: "/",
     },
     {
-      title: lang === "eng" ? "Practice Areas" : "სამოქმედო სფერო",
+      title: lang === "eng" ? "Practice Areas" : "სერვისები",
       path: "/practice-areas",
     },
     {
@@ -29,7 +29,7 @@ export function ActiveNavigation({ lang }: { lang: string }) {
   ];
   const linkData2 = [
     {
-      title: lang === "eng" ? "About" : "ჩვენს შესახებ",
+      title: lang === "eng" ? "About" : "ჩვენ შესახებ",
       path: "/about",
     },
     {

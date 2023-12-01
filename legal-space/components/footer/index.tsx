@@ -15,7 +15,7 @@ function Footer() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-2 gap-6 2xl:max-w-[1300px] 2xl:mx-auto">
         {/* About */}
         <FooterInfoContainer
-          title={`${lang === "eng" ? "About" : "შესახებ"}`}
+          title={`${lang === "eng" ? "About Us" : "ჩვენს შესახებ"}`}
           description={[
             `${
               lang === "eng"
@@ -36,8 +36,8 @@ function Footer() {
             }`,
             `${
               lang === "eng"
-                ? "Saturday - Sunday: Closed"
-                : "შაბათი - კვირა: დაკეტილია"
+                ? "Saturday - Sunday: Distance Consultation"
+                : "შაბათი - კვირა: დისტანციური კონსულტაცია"
             }`,
           ]}
         />
@@ -48,8 +48,8 @@ function Footer() {
           description={[
             `${
               lang === "eng"
-                ? "Tbilisi, Navtlugi street N-10, block N-3, flat N-13"
-                : "თბილისი, ნავთლუღს ქ. N-10, კორპუსი N-3, ბინა N-13"
+                ? "Tbilisi, Navtlughi street N-10, block N-3, flat N-13"
+                : "თბილისი, ნავთლუღის ქ. N-10, კორპუსი N-3, ბინა N-13"
             }`,
           ]}
         />

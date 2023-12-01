@@ -9,7 +9,7 @@ const HeroSection: React.FC = () => {
   return (
     <section className="flex flex-col gap-y-14 md:px-10">
       <div className="text-center">
-        <h1 className="text-6xl   leading-relaxed ">
+        <h1 className="md:text-6xl text-3xl leading-relaxed ">
           We're{" "}
           <span className="text-main-green-medium font-bold">Legal Space</span>.
           {lang === "eng"
@@ -19,7 +19,7 @@ const HeroSection: React.FC = () => {
         <Image
           src={aboutImage}
           alt="image"
-          className="h-[60dvh] md:h-[100dvh] object-cover object-center"
+          className="h-[60dvh] md:h-[100dvh] object-cover object-center mt-20"
         />
       </div>
       <article className="flex sm:flex-row flex-col gap-y-5 text-center sm:text-left gap-x-10">

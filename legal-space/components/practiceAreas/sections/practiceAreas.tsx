@@ -8,7 +8,7 @@ function PracticeAreasPracticeSection() {
   return (
     <section className="py-12 flex flex-col">
       <SectionTitle
-        title={`${lang === "eng" ? "Practice Areas" : "სამუშაო სფეროები"}`}
+        title={`${lang === "eng" ? "Practice Areas" : "სამუშაო სფერო"}`}
       />
 
       {/* Services Containers */}

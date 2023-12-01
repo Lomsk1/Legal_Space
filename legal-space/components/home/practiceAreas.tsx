@@ -9,7 +9,7 @@ function HomePracticeAreas() {
   return (
     <section className="py-12 bg-main-green-dark flex flex-col">
       <SectionTitle
-        title={`${lang === "eng" ? "Practice Areas" : "სამუშაო სფეროები"}`}
+        title={`${lang === "eng" ? "Practice Areas" : "სამუშაო სფერო"}`}
       />
 
       {/* Services Containers */}

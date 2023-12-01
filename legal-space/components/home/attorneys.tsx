@@ -12,7 +12,7 @@ function HomeAttorney({ attorneysData }: { attorneysData: AttorneysTypes }) {
     <section className="flex flex-col">
       <SectionTitle
         title={`${
-          lang === "eng" ? "Meet Our Attorneys" : "შეხვდით ჩვენს ადვოკატებს"
+          lang === "eng" ? "Meet Our Attorneys" : "გაიცანით ჩვენი ადვოკატები"
         }`}
       />
 
