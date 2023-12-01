@@ -26,8 +26,8 @@ const HeroSection: React.FC = () => {
         <p className="flex-1 text-4xl">
           <span className="text-main-green-medium font-bold ">Legal Space</span>{" "}
           {lang === "eng"
-            ? " is a full-service law firm, based in Georgia."
-            : "სრული იურიდიული მომსახურება საქართველოს მასშტაბით."}
+            ? " is a full-service law firm."
+            : "სრული იურიდიული მომსახურება."}
         </p>
         <p className="flex-[2] text-lg leading-8">
           {lang === "eng"

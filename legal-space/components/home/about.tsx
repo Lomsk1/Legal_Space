@@ -11,7 +11,7 @@ function HomeAboutSection() {
         {/* About */}
         <aside className="md:w-1/2">
           <h2 className="text-3xl">
-            {lang === "eng" ? "About Legal Space" : "ჩვენს შესახებ"}
+            {lang === "eng" ? "About Legal Space" : "ჩვენ შესახებ"}
           </h2>
 
           {/* Line */}

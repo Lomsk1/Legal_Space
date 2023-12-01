@@ -6,7 +6,12 @@ import { FaLinkedin } from "react-icons/fa";
 function Socials() {
   return (
     <>
-      <Link href={"https://www.facebook.com/qetiberidze11"} target="_blank">
+      <Link
+        href={
+          "https://www.facebook.com/profile.php?id=100092328090873&mibextid=LQQJ4d"
+        }
+        target="_blank"
+      >
         <FaFacebook className="text-xl hover:text-main-green-light duration-300" />
       </Link>
       <Link
