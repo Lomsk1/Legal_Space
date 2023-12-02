@@ -31,8 +31,8 @@ function Footer() {
           description={[
             `${
               lang === "eng"
-                ? "Monday - Friday: 09:00 - 06:00"
-                : "ორშაბათი - პარასკევი : 09:00 - 06:00"
+                ? "Monday - Friday: 09:00 - 18:00"
+                : "ორშაბათი - პარასკევი : 09:00 - 18:00"
             }`,
             `${
               lang === "eng"
