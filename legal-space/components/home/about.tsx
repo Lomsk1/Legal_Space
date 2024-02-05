@@ -20,23 +20,37 @@ function HomeAboutSection() {
           {/* Description */}
           <p className="mt-7 tracking-wider font-light">
             {lang === "eng"
-              ? `,,Legal Space” - This is the legal area that protects your violated
+              ? `Legal Space - This is the legal area that protects your violated
             rights. You can get legal advice and legal services from us in
             Georgian, English, Turkish and Azerbaijani languages. Our team
             offers both preparation of legal documents and representation in all
             three instances of public institutions and courts.`
-              : ",,Legal Space “- ესაა სამართლებრივი სივრცე, რომელიც იცავს თქვენს დარღვეულ უფლებებს. ჩვენთან სამართლებრივი კონსულტაცია და იურიდიული მომსახურება შეგიძლიათ მიიღოთ როგორც ქართულ, ასევე ინგლისურ, თურქულ და აზერბაიჯანულ ენებზე. ჩვენი გუნდი გთავაზობთ როგორც იურდიული დოკუმენტაციის მომზადებას, ასევე წარმომადგენლობას საჯარო დაწესებულებებსა და სასამართლოს სამივე ინსტანციაში."}
+              : "Legal Space - ესაა სამართლებრივი სივრცე, რომელიც იცავს თქვენს დარღვეულ უფლებებს. ჩვენთან სამართლებრივი კონსულტაცია და იურიდიული მომსახურება შეგიძლიათ მიიღოთ როგორც ქართულ, ასევე ინგლისურ, თურქულ და აზერბაიჯანულ ენებზე. ჩვენი გუნდი გთავაზობთ როგორც იურდიული დოკუმენტაციის მომზადებას, ასევე წარმომადგენლობას საჯარო დაწესებულებებსა და სასამართლოს სამივე ინსტანციაში."}
           </p>
 
           <p className="mt-16 text-xl">
             {lang === "eng" ? "We are speaking on" : "ჩვენ ვსაუბრობთ"}{" "}
             <span className="font-bold">5</span>{" "}
             {lang === "eng" ? "languages" : "ენაზე"}:{" "}
-            <span className=" font-bold">English</span>,{" "}
-            <span className=" font-bold">ქართულ</span>,{" "}
-            <span className=" font-bold">русский</span>,{" "}
-            <span className=" font-bold">Turkish</span>,{" "}
-            <span className=" font-bold">Azerbaijan</span>
+            <span className=" font-bold">
+              {lang === "eng" ? "Georgian" : "ქართულ"}
+            </span>
+            ,{" "}
+            <span className=" font-bold">
+              {lang === "eng" ? "English" : "ინგლისურ"}
+            </span>
+            ,{" "}
+            <span className=" font-bold">
+              {lang === "eng" ? "Russian" : "რუსულ"}
+            </span>
+            ,{" "}
+            <span className=" font-bold">
+              {lang === "eng" ? "Turkish" : "თურქულ"}
+            </span>
+            ,{" "}
+            <span className=" font-bold">
+              {lang === "eng" ? "Azerbaijani" : "აზერბაიჯანულ"}
+            </span>
           </p>
         </aside>
 

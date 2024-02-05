@@ -15,7 +15,7 @@ function HomeHeroSection() {
       <div className="flex flex-col-reverse w-[90%] gap-10 relative max-w-[310px] md:flex-row md:max-w-[730px] lg:max-w-[1100px]">
         {/* Text */}
         <aside className="w-full md:flex md:justify-center md:items-center ">
-          <h1 className="text-center text-3xl md:text-5xl tracking-widest font-semibold ">
+          <h1 className="text-center text-3xl md:text-5xl tracking-widest">
             {lang === "eng"
               ? " We Fight for Your Rights"
               : "ჩვენ ვიბრძვით თქვენი უფლებებისთვის"}
